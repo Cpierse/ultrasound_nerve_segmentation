@@ -203,6 +203,8 @@ def dice_coef_loss(y_true, y_pred):
 
 #%% U-Net:
 def unet(X,Y,train_idxs,test_idxs,nb_epoch=20,optomizer='adagrad',batch_size = 32):
+	# Architecture from: https://github.com/jocicmarko/ultrasound-nerve-segmentation
+	# Original paper: http://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/
     import numpy as np
     from keras.models import Model
     from keras.layers import Input, merge, Convolution2D, MaxPooling2D, UpSampling2D
